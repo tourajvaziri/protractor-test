@@ -4,7 +4,8 @@
   "description": "For Protractor test",
   "main": "protractor.conf.js",
   "scripts": {
-    "test": "protractor protractor.conf.js"
+    "webdriver-update": "webdriver-manager update",
+    "test": "tsc && protractor ./src/protractor.conf.js"
   },
   "author": "Touraj Vaziri",
   "license": "ISC",
