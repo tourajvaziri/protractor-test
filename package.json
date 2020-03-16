@@ -5,7 +5,9 @@
   "main": "protractor.conf.js",
   "scripts": {
     "webdriver-update": "webdriver-manager update",
-    "test": "tsc && protractor ./src/protractor.conf.js"
+    "Run": "tsc && protractor ./src/protractor.conf.js --elementExplorer",
+    "RunWithElementExplorer": "tsc && protractor ./src/protractor.conf.js --elementExplorer",
+    "Compile-typescript": "tsc"
   },
   "author": "Touraj Vaziri",
   "license": "ISC",
