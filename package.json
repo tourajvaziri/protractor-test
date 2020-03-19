@@ -5,7 +5,7 @@
   "main": "protractor.conf.js",
   "scripts": {
     "webdriver-update": "webdriver-manager update",
-    "Run": "tsc && protractor ./src/protractor.conf.js --elementExplorer",
+    "Run": "tsc && protractor ./src/protractor.conf.js",
     "RunWithElementExplorer": "tsc && protractor ./src/protractor.conf.js --elementExplorer",
     "Compile-typescript": "tsc"
   },
@@ -14,6 +14,7 @@
   "dependencies": {
     "@types/jasmine": "^3.3.12",
     "@types/node": "^12.0.2",
+    "exceljs": "^3.8.0",
     "jasmine": "^3.4.0",
     "jasmine-spec-reporter": "^4.2.1",
     "protractor": "^5.4.2",

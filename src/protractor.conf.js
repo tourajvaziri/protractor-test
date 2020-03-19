@@ -19,5 +19,5 @@ exports.config = {
         defaultTimeoutInterval: 30000
     },
 
-    baseUrl: 'https://material.angularjs.org'  // Use for interaction with elements intractively
+    baseUrl: 'https://juliemr.github.io/protractor-demo/'  // Use for interaction with elements intractively
 }

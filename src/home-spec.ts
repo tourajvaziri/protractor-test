@@ -1,10 +1,41 @@
-import { browser } from 'protractor';
+import { browser, element, by, $$ } from 'protractor';
+import {Workbook, Row, Cell} from 'exceljs';
+
 describe('Browser Navigation', () => {
-   it('Exampe of back method', () => {
-      browser.get('https://material.angularjs.org')
-         .then(() => (browser.get('https://www.protractortest.org/#/faq'))
-            .then(() => browser.explore())) // Use for interaction with elements intractively
-      // .then(() => browser.debugger()) // Use when debugging before and element not found  
-      // .then(() => browser.pause())) // Use when debugging before and element not found  (YOU THIS ONE Recommended)
+   xit('should greet the named user', async function() {
+      debugger;
+      await browser.get('http://www.angularjs.org');
+  
+      await element(by.model('yourName')).sendKeys('Julie');
+  
+      var greeting = element(by.binding('yourName'));
+  
+      expect(await greeting.getText()).toEqual('Hello Julie!');
+  });
+
+ 
+
+  xit('calculator test', async function() {
+   await browser.get("https://juliemr.github.io/protractor-demo/");
+   await element($$(".input-small:nth-child(1)")).click();
+   await element($$(".input-small:nth-child(1)")).sendKeys("asd");
+
+   var asd = await $$(".input-small:nth-child(1)").getText();
+   console.log("VALUE IS: " + asd);
+
+});
+
+it('excel test', async function() {
+   var workbook = new Workbook();
+   console.log("TAHER111:" );
+   await workbook.xlsx.readFile("./src/data1.xlsx").then(async function () {
+       var inboundWorksheet = workbook.getWorksheet(2);
+    //   console.log("TAHER: " + rowObject.getCell(1).toString());
+       //Data.firstName = rowObject.getCell(1).toString();
+
+       var rowObject = inboundWorksheet.getRow(1);
+       console.log("TAHER: " + rowObject.getCell(2).toString());
    });
+}); 
+
 });
