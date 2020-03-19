@@ -25,7 +25,7 @@ describe('Browser Navigation', () => {
 
 });
 
-it('excel test', async function() {
+xit('excel test', async function() {
    var workbook = new Workbook();
    console.log("TAHER111:" );
    await workbook.xlsx.readFile("./src/data1.xlsx").then(async function () {
@@ -37,5 +37,15 @@ it('excel test', async function() {
        console.log("TAHER: " + rowObject.getCell(2).toString());
    });
 }); 
+
+it('Bad test with error', async function() {
+   await browser.get("https://juliemr.github.io/protractor-demo/");
+   await element($$(".input-small:nth-child(1)")).click();
+   await element($$(".input-small:nth-child(1)")).sendKeys("asd");
+
+   var asd = await $$(".input-small:nth-child(122)").getText();
+   console.log("VALUE IS: " + asd);
+
+});
 
 });

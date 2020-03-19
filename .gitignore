@@ -23,5 +23,6 @@ website/docgen/build/
 # Output javascript files
 dist/
 
-# junit results
+# results
 junitresults
+target/
