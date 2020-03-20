@@ -8,40 +8,45 @@ var reporter = new HtmlScreenshotReporter({
 });
 
 exports.config = {
-    framework: 'jasmine', //Type of Framework used 
-    directConnect: true, // Set to false if you like to run Selenium server manually
-    // seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['../dist/out-tsc/home-spec.js'], //Name of the Specfile
+  framework: 'jasmine', //Type of Framework used 
+  directConnect: true, // Set to false if you like to run Selenium server manually
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
+  specs: ['../dist/out-tsc/home-spec.js'], //Name of the Specfile
 
-    capabilites: {
-        'browserName': 'chrome'
-    },
+  capabilites: {
+    'browserName': 'chrome'
+  },
 
-      // Setup the report before any tests start
-  beforeLaunch: function() {
-    return new Promise(function(resolve){
+  // Setup the report before any tests start
+  beforeLaunch: function () {
+    return new Promise(function (resolve) {
       reporter.beforeLaunch(resolve);
     });
   },
 
-    onPrepare() {
-        jasmine.getEnv().addReporter(reporter);
-        require('ts-node').register({
-            project: require('path').join(__dirname, '../tsconfig.json') // Relative path of tsconfig.json file 
-        });
-    },
+  onPrepare() {
+    jasmine.getEnv().addReporter(reporter);
+    require('ts-node').register({
+      project: require('path').join(__dirname, '../tsconfig.json') // Relative path of tsconfig.json file 
+    });
 
-    // Check what this is
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 30000
-    },
+    var AllureReporter = require('jasmine-allure-reporter');
+    jasmine.getEnv().addReporter(new AllureReporter({
+      resultsDir: 'target/allure'
+    }));
+  },
 
-    // Close the report after all tests finish
-  afterLaunch: function(exitCode) {
-    return new Promise(function(resolve){
+  // Check what this is
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 30000
+  },
+
+  // Close the report after all tests finish
+  afterLaunch: function (exitCode) {
+    return new Promise(function (resolve) {
       reporter.afterLaunch(resolve.bind(this, exitCode));
     });
   },
 
-    baseUrl: 'https://juliemr.github.io/protractor-demo/'  // Use for interaction with elements intractively
+  baseUrl: 'https://juliemr.github.io/protractor-demo/'  // Use for interaction with elements intractively
 }
