@@ -5,6 +5,7 @@
   "main": "protractor.conf.js",
   "scripts": {
     "webdriver-update": "webdriver-manager update",
+    "npm-install": "npm install --save-dev",
     "Run": "tsc && protractor ./src/protractor.conf.js",
     "RunWithElementExplorer": "tsc && protractor ./src/protractor.conf.js --elementExplorer",
     "Compile-typescript": "tsc"
