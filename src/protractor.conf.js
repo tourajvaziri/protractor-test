@@ -36,6 +36,15 @@ exports.config = {
       resultsDir: 'test_results/allureReporter'
     }));
 
+    jasmine.getEnv().afterEach(function(done){
+      browser.takeScreenshot().then(function (png) {
+        allure.createAttachment('Screenshot', function () {
+          return new Buffer(png, 'base64')
+        }, 'image/png')();
+        done();
+      })
+    });
+
     var jasmineReporters = require('jasmine-reporters');
     jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
       consolidateAll: true,
@@ -64,7 +73,6 @@ exports.config = {
         }
       }
     });
-
   },
 
   // Check what this is
