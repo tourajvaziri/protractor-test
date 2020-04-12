@@ -36,7 +36,7 @@ xit('excel test', async function() {
    });
 }); 
 
-it('Bad test with error', async function() {
+xit('Bad test with error', async function() {
    await browser.get("https://juliemr.github.io/protractor-demo/");
    await element($$(".input-small:nth-child(1)")).click();
    await element($$(".input-small:nth-child(1)")).sendKeys("asd");
