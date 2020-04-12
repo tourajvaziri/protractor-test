@@ -2,7 +2,7 @@ import { browser, element, by, $$ } from 'protractor';
 import {Workbook, Row, Cell} from 'exceljs';
 
 describe('Browser Navigation', () => {
-   xit('should greet the named user', async function() {
+   it('should greet the named user', async function() {
       debugger;
       await browser.get('http://www.angularjs.org');
   
@@ -38,7 +38,7 @@ xit('excel test', async function() {
    });
 }); 
 
-it('Bad test with error', async function() {
+xit('Bad test with error', async function() {
    await browser.get("https://juliemr.github.io/protractor-demo/");
    await element($$(".input-small:nth-child(1)")).click();
    await element($$(".input-small:nth-child(1)")).sendKeys("asd");
