@@ -13,8 +13,6 @@ describe('Browser Navigation', () => {
       expect(await greeting.getText()).toEqual('Hello Julie!');
   });
 
- 
-
   xit('calculator test', async function() {
    await browser.get("https://juliemr.github.io/protractor-demo/");
    await element($$(".input-small:nth-child(1)")).click();
@@ -38,7 +36,7 @@ xit('excel test', async function() {
    });
 }); 
 
-xit('Bad test with error', async function() {
+it('Bad test with error', async function() {
    await browser.get("https://juliemr.github.io/protractor-demo/");
    await element($$(".input-small:nth-child(1)")).click();
    await element($$(".input-small:nth-child(1)")).sendKeys("asd");
