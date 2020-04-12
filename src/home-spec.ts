@@ -2,7 +2,7 @@ import { browser, element, by, $$ } from 'protractor';
 import {Workbook, Row, Cell} from 'exceljs';
 
 describe('Browser Navigation', () => {
-   it('should greet the named user 1', async function() {
+   it('should greet the named user 2', async function() {
       debugger;
       await browser.get('http://www.angularjs.org');
   
