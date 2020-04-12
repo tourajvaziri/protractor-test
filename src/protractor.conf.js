@@ -101,7 +101,7 @@ exports.config = {
       testConfig = {
         reportTitle: 'Protractor Test Execution Report',
         outputPath: 'test_results/htmlReporter/',
-        outputFilename: 'ProtractorTestReport',
+        outputFilename: 'ProtractorTestReport - ' + browserName,
         screenshotPath: './screenshots',
         testBrowser: browserName,
         browserVersion: browserVersion,
